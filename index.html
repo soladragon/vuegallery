@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Flash!</title>
+</head>
+<body>
+  <div id="flashcard-app">
+    <ul class="flashcard-list">
+      <li v-on:click="toggleCard(card)" v-for="(card, index) in cards">
+        <transition name="flip">
+          <div v-if="!card.flipped" key="front" class="card">
+              <img v-bind:src="card.img"></a>
+          </div>
+          <div v-else key="back" class="card">
+                  <a class="linkclass">
+                    <div id="ttt">
+                      <h4>{{card.title}}</h4>
+                      <P>{{card.info}}</P>
+                    </div>
+                </a>
+                <div id="myLink">
+                <p><a v-bind:href="card.link">Click here to view site</a></p>
+                </div>
+                </div>
+
+              </div>
+        </transition>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
